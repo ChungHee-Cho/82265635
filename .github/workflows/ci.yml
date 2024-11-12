@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: sa-82265635
+name: github action CI
 
 on: workflow_dispatch
 #   push:
