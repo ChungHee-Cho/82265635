@@ -13,6 +13,8 @@ on: workflow_dispatch
 #     branches: [ "main" ]
 #   pull_request:
 #     branches: [ "main" ]
+env:
+  IMAGE_NAME: 82265635
 
 jobs:
   build:
