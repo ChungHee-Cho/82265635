@@ -22808,16 +22808,21 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  ports:
-    - name: http
-      port: 80
-      protocol: TCP
-      targetPort: 8080
-    - name: https
-      port: 443
-      protocol: TCP
-      targetPort: 8080
+  prefix: /argo-cd
+  rewrite: /argo-cd
+  service: http://argocd.ce-82265635-sa.kubepia.net
+#  ports:
+#    - name: http
+#      port: 80
+#      protocol: TCP
+#      targetPort: 8080
+#    - name: https
+#      port: 443
+#      protocol: TCP
+#      targetPort: 8080
   selector:
     app.kubernetes.io/name: argocd-server
 ---
